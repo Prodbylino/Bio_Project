@@ -7,5 +7,5 @@ def local_css(file_name):
 
 local_css("style/style.css")
 
-code = '''(select * from table")'''
+code = '''(select * from Trails")'''
 st.code(code, language='sql')
