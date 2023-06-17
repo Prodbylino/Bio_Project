@@ -1,0 +1,950 @@
+Last login: Wed Jun  7 00:10:27 on ttys002
+(base) ziliangzhang@LinodeMBP Bio_Project % conda list --envs info
+usage: conda [-h] [-V] command ...
+conda: error: unrecognized arguments: --envs
+(base) ziliangzhang@LinodeMBP Bio_Project % conda info --envs
+# conda environments:
+#
+base                  *  /Users/ziliangzhang/anaconda3
+                         /Users/ziliangzhang/opt/anaconda3
+                         /Users/ziliangzhang/opt/anaconda3/envs/bootcamp
+
+(base) ziliangzhang@LinodeMBP Bio_Project % conda activate bootcamp
+
+EnvironmentNameNotFound: Could not find conda environment: bootcamp
+You can list all discoverable environments with `conda info --envs`.
+
+
+(base) ziliangzhang@LinodeMBP Bio_Project % conda activate /Users/ziliangzhang/opt/anaconda3/envs/bootcamp
+(bootcamp) ziliangzhang@LinodeMBP Bio_Project % ec2-13-55-176-25.ap-southeast-2.compute.amazonaws.com
+zsh: command not found: ec2-13-55-176-25.ap-southeast-2.compute.amazonaws.com
+(bootcamp) ziliangzhang@LinodeMBP Bio_Project % ssh -i "Lino_bio_server.pem" ec2-user@ec2-13-55-176-25.ap-southeast-2.compute.amazonaws.com
+Last failed login: Mon Jun  5 17:28:11 UTC 2023 on pts/0
+There was 1 failed login attempt since the last successful login.
+Last login: Mon Jun  5 17:27:57 2023
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-172-31-2-215 ~]$ cd Bio_Projects
+-bash: cd: Bio_Projects: No such file or directory
+[ec2-user@ip-172-31-2-215 ~]$ ls
+Bio_Project  nohup.out
+[ec2-user@ip-172-31-2-215 ~]$ cd Bio_Project
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py --server.port 80
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+Traceback (most recent call last):
+  File "/usr/lib64/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib64/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/__main__.py", line 20, in <module>
+    main(prog_name="streamlit")
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1657, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/cli.py", line 233, in main_run
+    _main_run(target, args, flag_options=kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/cli.py", line 269, in _main_run
+    bootstrap.run(file, command_line, args, flag_options)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/bootstrap.py", line 404, in run
+    asyncio.run(run_server())
+  File "/usr/lib64/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib64/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/bootstrap.py", line 392, in run_server
+    await server.start()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 259, in start
+    start_listening(app)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 130, in start_listening
+    start_listening_tcp_socket(http_server)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 189, in start_listening_tcp_socket
+    http_server.listen(port, address)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tornado/tcpserver.py", line 189, in listen
+    reuse_port=reuse_port,
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+PermissionError: [Errno 13] Permission denied
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo su
+[root@ip-172-31-2-215 Bio_Project]# ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 Jun05 ?        00:00:02 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+root         2     0  0 Jun05 ?        00:00:00 [kthreadd]
+root         3     2  0 Jun05 ?        00:00:00 [rcu_gp]
+root         4     2  0 Jun05 ?        00:00:00 [rcu_par_gp]
+root         6     2  0 Jun05 ?        00:00:00 [kworker/0:0H-ev]
+root         8     2  0 Jun05 ?        00:00:00 [mm_percpu_wq]
+root         9     2  0 Jun05 ?        00:00:00 [rcu_tasks_rude_]
+root        10     2  0 Jun05 ?        00:00:00 [rcu_tasks_trace]
+root        11     2  0 Jun05 ?        00:00:00 [ksoftirqd/0]
+root        12     2  0 Jun05 ?        00:00:01 [rcu_sched]
+root        13     2  0 Jun05 ?        00:00:00 [migration/0]
+root        15     2  0 Jun05 ?        00:00:00 [cpuhp/0]
+root        17     2  0 Jun05 ?        00:00:00 [kdevtmpfs]
+root        18     2  0 Jun05 ?        00:00:00 [netns]
+root        21     2  0 Jun05 ?        00:00:00 [kauditd]
+root       297     2  0 Jun05 ?        00:00:00 [khungtaskd]
+root       298     2  0 Jun05 ?        00:00:00 [oom_reaper]
+root       299     2  0 Jun05 ?        00:00:00 [writeback]
+root       301     2  0 Jun05 ?        00:00:02 [kcompactd0]
+root       302     2  0 Jun05 ?        00:00:00 [ksmd]
+root       303     2  0 Jun05 ?        00:00:00 [khugepaged]
+root       358     2  0 Jun05 ?        00:00:00 [kintegrityd]
+root       360     2  0 Jun05 ?        00:00:00 [kblockd]
+root       361     2  0 Jun05 ?        00:00:00 [blkcg_punt_bio]
+root       713     2  0 Jun05 ?        00:00:00 [xen-balloon]
+root       719     2  0 Jun05 ?        00:00:00 [tpm_dev_wq]
+root       725     2  0 Jun05 ?        00:00:00 [md]
+root       728     2  0 Jun05 ?        00:00:00 [edac-poller]
+root       733     2  0 Jun05 ?        00:00:00 [watchdogd]
+root       830     2  0 Jun05 ?        00:00:00 [kworker/0:1H-kb]
+root       883     2  0 Jun05 ?        00:00:00 [kswapd0]
+root       885     2  0 Jun05 ?        00:00:00 [xfsalloc]
+root       886     2  0 Jun05 ?        00:00:00 [xfs_mru_cache]
+root       889     2  0 Jun05 ?        00:00:00 [kthrotld]
+root       900     2  0 Jun05 ?        00:00:00 [xenbus]
+root       901     2  0 Jun05 ?        00:00:00 [xenwatch]
+root       937     2  0 Jun05 ?        00:00:00 [nvme-wq]
+root       939     2  0 Jun05 ?        00:00:00 [nvme-reset-wq]
+root       941     2  0 Jun05 ?        00:00:00 [nvme-delete-wq]
+root       975     2  0 Jun05 ?        00:00:00 [ipv6_addrconf]
+root       984     2  0 Jun05 ?        00:00:00 [kstrp]
+root       996     2  0 Jun05 ?        00:00:00 [zswap-shrink]
+root       997     2  0 Jun05 ?        00:00:00 [kworker/u31:0]
+root      1682     2  0 Jun05 ?        00:00:00 [ata_sff]
+root      1695     2  0 Jun05 ?        00:00:00 [scsi_eh_0]
+root      1696     2  0 Jun05 ?        00:00:00 [scsi_tmf_0]
+root      1700     2  0 Jun05 ?        00:00:00 [scsi_eh_1]
+root      1701     2  0 Jun05 ?        00:00:00 [scsi_tmf_1]
+root      1712     2  0 Jun05 ?        00:00:00 [xfs-buf/xvda1]
+root      1713     2  0 Jun05 ?        00:00:00 [xfs-conv/xvda1]
+root      1714     2  0 Jun05 ?        00:00:00 [xfs-cil/xvda1]
+root      1715     2  0 Jun05 ?        00:00:00 [xfs-reclaim/xvd]
+root      1716     2  0 Jun05 ?        00:00:00 [xfs-eofblocks/x]
+root      1717     2  0 Jun05 ?        00:00:00 [xfs-log/xvda1]
+root      1718     2  0 Jun05 ?        00:00:19 [xfsaild/xvda1]
+root      1777     1  0 Jun05 ?        00:00:01 /usr/lib/systemd/systemd-journald
+root      1794     1  0 Jun05 ?        00:00:00 /usr/sbin/lvmetad -f
+root      1801     2  0 Jun05 ?        00:00:00 [ena]
+root      1811     1  0 Jun05 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+root      2485     2  0 Jun05 ?        00:00:00 [cryptd]
+root      2585     2  0 Jun05 ?        00:00:00 [rpciod]
+root      2586     2  0 Jun05 ?        00:00:00 [xprtiod]
+root      2589     1  0 Jun05 ?        00:00:00 /sbin/auditd
+dbus      2619     1  0 Jun05 ?        00:00:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+rpc       2625     1  0 Jun05 ?        00:00:00 /sbin/rpcbind -w
+root      2628     1  0 Jun05 ?        00:00:00 /usr/lib/systemd/systemd-logind
+chrony    2635     1  0 Jun05 ?        00:00:01 /usr/sbin/chronyd -F 2
+libstor+  2637     1  0 Jun05 ?        00:00:00 /usr/bin/lsmd -d
+rngd      2649     1  0 Jun05 ?        00:00:00 /sbin/rngd -f --fill-watermark=0 --exclude=jitter
+root      2655     1  0 Jun05 ?        00:00:00 /usr/sbin/gssproxy -D
+root      2879     1  0 Jun05 ?        00:00:00 /sbin/dhclient -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid eth0
+root      2928     1  0 Jun05 ?        00:00:00 /sbin/dhclient -6 -nw -lf /var/lib/dhclient/dhclient6--eth0.lease -pf /var/run/dhclient6-eth0.pid eth0
+root      3073     1  0 Jun05 ?        00:00:00 /usr/libexec/postfix/master -w
+postfix   3075  3073  0 Jun05 ?        00:00:00 qmgr -l -t unix -u
+root      3125     1  0 Jun05 ?        00:00:02 /usr/bin/amazon-ssm-agent
+root      3128     1  0 Jun05 ?        00:00:04 /usr/sbin/rsyslogd -n
+root      3151     1  0 Jun05 ?        00:00:00 /usr/sbin/atd -f
+root      3155     1  0 Jun05 ?        00:00:00 /usr/sbin/crond -n
+root      3168     1  0 Jun05 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+root      3169     1  0 Jun05 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+root      3203  3125  0 Jun05 ?        00:00:01 /usr/bin/ssm-agent-worker
+root      3217     1  0 Jun05 ?        00:00:00 /usr/sbin/sshd -D
+root      3279     1  0 Jun05 ?        00:00:00 /usr/sbin/acpid
+root      3424     1  0 Jun05 ?        00:00:00 sudo su
+root      3425  3424  0 Jun05 ?        00:00:00 su
+root      3426  3425  0 Jun05 ?        00:00:00 bash
+root      7034  3426  0 Jun05 ?        00:00:00 su - ec2-user
+ec2-user  7035  7034  0 Jun05 ?        00:00:00 -bash
+ec2-user  7446  7035  0 Jun05 ?        00:01:57 python3 -m streamlit run 1_🏠_Home.py
+root      9126     2  0 00:48 ?        00:00:00 [kworker/u30:0-e]
+postfix  11981  3073  0 12:47 ?        00:00:00 pickup -l -t unix -u
+root     12232     2  0 13:45 ?        00:00:00 [kworker/0:1-eve]
+root     12234     2  0 13:46 ?        00:00:00 [kworker/u30:1]
+root     12336     2  0 14:09 ?        00:00:00 [kworker/0:2-mm_]
+root     12370  3217  0 14:14 ?        00:00:00 sshd: ec2-user [priv]
+ec2-user 12388 12370  0 14:14 ?        00:00:00 sshd: ec2-user@pts/1
+ec2-user 12389 12388  0 14:14 pts/1    00:00:00 -bash
+root     12477 12389  0 14:17 pts/1    00:00:00 sudo su
+root     12478 12477  0 14:17 pts/1    00:00:00 su
+root     12479 12478  0 14:17 pts/1    00:00:00 bash
+root     12493 12479  0 14:17 pts/1    00:00:00 ps -ef
+[root@ip-172-31-2-215 Bio_Project]# kill 7446
+[root@ip-172-31-2-215 Bio_Project]# python3 -m streamlit run 1_🏠_Home.py --server.port 80
+/bin/python3: No module named streamlit
+[root@ip-172-31-2-215 Bio_Project]# exit()
+> ^C
+[root@ip-172-31-2-215 Bio_Project]# [root@ip-172-31-2-215 Bio_Project]# exit
+bash: [root@ip-172-31-2-215: command not found
+[root@ip-172-31-2-215 Bio_Project]# exit
+exit
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py --server.port 80
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+Traceback (most recent call last):
+  File "/usr/lib64/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib64/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/__main__.py", line 20, in <module>
+    main(prog_name="streamlit")
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1657, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/cli.py", line 233, in main_run
+    _main_run(target, args, flag_options=kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/cli.py", line 269, in _main_run
+    bootstrap.run(file, command_line, args, flag_options)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/bootstrap.py", line 404, in run
+    asyncio.run(run_server())
+  File "/usr/lib64/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib64/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/bootstrap.py", line 392, in run_server
+    await server.start()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 259, in start
+    start_listening(app)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 130, in start_listening
+    start_listening_tcp_socket(http_server)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 189, in start_listening_tcp_socket
+    http_server.listen(port, address)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tornado/tcpserver.py", line 189, in listen
+    reuse_port=reuse_port,
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+PermissionError: [Errno 13] Permission denied
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo python3 -m streamlit run 1_🏠_Home.py --server.port 80
+/bin/python3: No module named streamlit
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo su
+[root@ip-172-31-2-215 Bio_Project]# pip
+bash: pip: command not found
+[root@ip-172-31-2-215 Bio_Project]# yum update
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                                                         | 3.7 kB  00:00:00     
+No packages marked for update
+[root@ip-172-31-2-215 Bio_Project]# sudo su
+[root@ip-172-31-2-215 Bio_Project]# ls
+1_🏠_Home.py  Lino_bio_server.pem  nohup.out  pages  README.md  requirements.txt  style
+[root@ip-172-31-2-215 Bio_Project]# cd
+[root@ip-172-31-2-215 ~]# sudo su
+[root@ip-172-31-2-215 ~]# su - ec2-user
+Last login: Tue Jun  6 14:14:30 UTC 2023 from 124.184.233.97 on pts/1
+[ec2-user@ip-172-31-2-215 ~]$ 
+[ec2-user@ip-172-31-2-215 ~]$ sudo su
+[root@ip-172-31-2-215 ec2-user]# exit
+exit
+[ec2-user@ip-172-31-2-215 ~]$ -m streamlit run 1_🏠_Home.py --server.port 80
+-bash: -m: command not found
+[ec2-user@ip-172-31-2-215 ~]$ python3 -m streamlit run 1_🏠_Home.py --server.port 80
+Usage: streamlit run [OPTIONS] TARGET [ARGS]...
+Try 'streamlit run --help' for help.
+
+Error: Invalid value: File does not exist: 1_🏠_Home.py
+[ec2-user@ip-172-31-2-215 ~]$ ls
+Bio_Project  nohup.out
+[ec2-user@ip-172-31-2-215 ~]$ cd Bio_Project
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py --server.port 80
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+Traceback (most recent call last):
+  File "/usr/lib64/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib64/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/__main__.py", line 20, in <module>
+    main(prog_name="streamlit")
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1657, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/cli.py", line 233, in main_run
+    _main_run(target, args, flag_options=kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/cli.py", line 269, in _main_run
+    bootstrap.run(file, command_line, args, flag_options)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/bootstrap.py", line 404, in run
+    asyncio.run(run_server())
+  File "/usr/lib64/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib64/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/bootstrap.py", line 392, in run_server
+    await server.start()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 259, in start
+    start_listening(app)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 130, in start_listening
+    start_listening_tcp_socket(http_server)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 189, in start_listening_tcp_socket
+    http_server.listen(port, address)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tornado/tcpserver.py", line 189, in listen
+    reuse_port=reuse_port,
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+PermissionError: [Errno 13] Permission denied
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo yum update -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                                                         | 3.7 kB  00:00:00     
+No packages marked for update
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo yum install nginx -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+No package nginx available.
+Error: Nothing to do
+
+
+nginx is available in Amazon Linux Extra topic "nginx1"
+
+To use, run
+# sudo amazon-linux-extras install nginx1
+
+Learn more at
+https://aws.amazon.com/amazon-linux-2/faqs/#Amazon_Linux_Extras
+
+
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo amazon-linux-extras install nginx1
+Installing nginx
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Cleaning repos: amzn2-core amzn2extra-docker amzn2extra-kernel-5.10 amzn2extra-nginx1
+17 metadata files removed
+6 sqlite files removed
+0 metadata files removed
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                                                         | 3.7 kB  00:00:00     
+amzn2extra-docker                                                                                                                                                                  | 3.0 kB  00:00:00     
+amzn2extra-kernel-5.10                                                                                                                                                             | 3.0 kB  00:00:00     
+amzn2extra-nginx1                                                                                                                                                                  | 3.0 kB  00:00:00     
+(1/9): amzn2-core/2/x86_64/group_gz                                                                                                                                                | 2.5 kB  00:00:00     
+(2/9): amzn2-core/2/x86_64/updateinfo                                                                                                                                              | 614 kB  00:00:00     
+(3/9): amzn2extra-kernel-5.10/2/x86_64/updateinfo                                                                                                                                  |  30 kB  00:00:00     
+(4/9): amzn2extra-nginx1/2/x86_64/updateinfo                                                                                                                                       |   76 B  00:00:00     
+(5/9): amzn2extra-docker/2/x86_64/primary_db                                                                                                                                       | 108 kB  00:00:00     
+(6/9): amzn2extra-nginx1/2/x86_64/primary_db                                                                                                                                       |  60 kB  00:00:00     
+(7/9): amzn2extra-docker/2/x86_64/updateinfo                                                                                                                                       | 9.8 kB  00:00:00     
+(8/9): amzn2extra-kernel-5.10/2/x86_64/primary_db                                                                                                                                  |  19 MB  00:00:00     
+(9/9): amzn2-core/2/x86_64/primary_db                                                                                                                                              |  73 MB  00:00:01     
+Resolving Dependencies
+--> Running transaction check
+---> Package nginx.x86_64 1:1.22.1-1.amzn2.0.2 will be installed
+--> Processing Dependency: nginx-filesystem = 1:1.22.1-1.amzn2.0.2 for package: 1:nginx-1.22.1-1.amzn2.0.2.x86_64
+--> Processing Dependency: nginx-core = 1:1.22.1-1.amzn2.0.2 for package: 1:nginx-1.22.1-1.amzn2.0.2.x86_64
+--> Running transaction check
+---> Package nginx-core.x86_64 1:1.22.1-1.amzn2.0.2 will be installed
+--> Processing Dependency: libssl.so.1.1(OPENSSL_1_1_1)(64bit) for package: 1:nginx-core-1.22.1-1.amzn2.0.2.x86_64
+--> Processing Dependency: libssl.so.1.1(OPENSSL_1_1_0)(64bit) for package: 1:nginx-core-1.22.1-1.amzn2.0.2.x86_64
+--> Processing Dependency: libcrypto.so.1.1(OPENSSL_1_1_0)(64bit) for package: 1:nginx-core-1.22.1-1.amzn2.0.2.x86_64
+--> Processing Dependency: libssl.so.1.1()(64bit) for package: 1:nginx-core-1.22.1-1.amzn2.0.2.x86_64
+--> Processing Dependency: libprofiler.so.0()(64bit) for package: 1:nginx-core-1.22.1-1.amzn2.0.2.x86_64
+--> Processing Dependency: libcrypto.so.1.1()(64bit) for package: 1:nginx-core-1.22.1-1.amzn2.0.2.x86_64
+---> Package nginx-filesystem.noarch 1:1.22.1-1.amzn2.0.2 will be installed
+--> Running transaction check
+---> Package gperftools-libs.x86_64 0:2.6.1-1.amzn2 will be installed
+---> Package openssl11-libs.x86_64 1:1.1.1g-12.amzn2.0.14 will be installed
+--> Processing Dependency: openssl11-pkcs11 for package: 1:openssl11-libs-1.1.1g-12.amzn2.0.14.x86_64
+--> Running transaction check
+---> Package openssl11-pkcs11.x86_64 0:0.4.10-6.amzn2.0.1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+==========================================================================================================================================================================================================
+ Package                                          Arch                                   Version                                                  Repository                                         Size
+==========================================================================================================================================================================================================
+Installing:
+ nginx                                            x86_64                                 1:1.22.1-1.amzn2.0.2                                     amzn2extra-nginx1                                  55 k
+Installing for dependencies:
+ gperftools-libs                                  x86_64                                 2.6.1-1.amzn2                                            amzn2-core                                        274 k
+ nginx-core                                       x86_64                                 1:1.22.1-1.amzn2.0.2                                     amzn2extra-nginx1                                 559 k
+ nginx-filesystem                                 noarch                                 1:1.22.1-1.amzn2.0.2                                     amzn2extra-nginx1                                  25 k
+ openssl11-libs                                   x86_64                                 1:1.1.1g-12.amzn2.0.14                                   amzn2-core                                        1.4 M
+ openssl11-pkcs11                                 x86_64                                 0.4.10-6.amzn2.0.1                                       amzn2-core                                         61 k
+
+Transaction Summary
+==========================================================================================================================================================================================================
+Install  1 Package (+5 Dependent packages)
+
+Total download size: 2.4 M
+Installed size: 6.7 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/6): gperftools-libs-2.6.1-1.amzn2.x86_64.rpm                                                                                                                                    | 274 kB  00:00:00     
+(2/6): nginx-1.22.1-1.amzn2.0.2.x86_64.rpm                                                                                                                                         |  55 kB  00:00:00     
+(3/6): nginx-core-1.22.1-1.amzn2.0.2.x86_64.rpm                                                                                                                                    | 559 kB  00:00:00     
+(4/6): nginx-filesystem-1.22.1-1.amzn2.0.2.noarch.rpm                                                                                                                              |  25 kB  00:00:00     
+(5/6): openssl11-pkcs11-0.4.10-6.amzn2.0.1.x86_64.rpm                                                                                                                              |  61 kB  00:00:00     
+(6/6): openssl11-libs-1.1.1g-12.amzn2.0.14.x86_64.rpm                                                                                                                              | 1.4 MB  00:00:00     
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                     7.0 MB/s | 2.4 MB  00:00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 1:nginx-filesystem-1.22.1-1.amzn2.0.2.noarch                                                                                                                                           1/6 
+  Installing : 1:openssl11-libs-1.1.1g-12.amzn2.0.14.x86_64                                                                                                                                           2/6 
+  Installing : openssl11-pkcs11-0.4.10-6.amzn2.0.1.x86_64                                                                                                                                             3/6 
+  Installing : gperftools-libs-2.6.1-1.amzn2.x86_64                                                                                                                                                   4/6 
+  Installing : 1:nginx-core-1.22.1-1.amzn2.0.2.x86_64                                                                                                                                                 5/6 
+  Installing : 1:nginx-1.22.1-1.amzn2.0.2.x86_64                                                                                                                                                      6/6 
+  Verifying  : gperftools-libs-2.6.1-1.amzn2.x86_64                                                                                                                                                   1/6 
+  Verifying  : 1:nginx-filesystem-1.22.1-1.amzn2.0.2.noarch                                                                                                                                           2/6 
+  Verifying  : 1:nginx-1.22.1-1.amzn2.0.2.x86_64                                                                                                                                                      3/6 
+  Verifying  : 1:nginx-core-1.22.1-1.amzn2.0.2.x86_64                                                                                                                                                 4/6 
+  Verifying  : openssl11-pkcs11-0.4.10-6.amzn2.0.1.x86_64                                                                                                                                             5/6 
+  Verifying  : 1:openssl11-libs-1.1.1g-12.amzn2.0.14.x86_64                                                                                                                                           6/6 
+
+Installed:
+  nginx.x86_64 1:1.22.1-1.amzn2.0.2                                                                                                                                                                       
+
+Dependency Installed:
+  gperftools-libs.x86_64 0:2.6.1-1.amzn2             nginx-core.x86_64 1:1.22.1-1.amzn2.0.2       nginx-filesystem.noarch 1:1.22.1-1.amzn2.0.2       openssl11-libs.x86_64 1:1.1.1g-12.amzn2.0.14      
+  openssl11-pkcs11.x86_64 0:0.4.10-6.amzn2.0.1      
+
+Complete!
+  0  ansible2                 available    \
+        [ =2.4.2  =2.4.6  =2.8  =stable ]
+  2  httpd_modules            available    [ =1.0  =stable ]
+  3  memcached1.5             available    \
+        [ =1.5.1  =1.5.16  =1.5.17 ]
+  6  postgresql10             available    [ =10  =stable ]
+  9  R3.4                     available    [ =3.4.3  =stable ]
+ 10  rust1                    available    \
+        [ =1.22.1  =1.26.0  =1.26.1  =1.27.2  =1.31.0  =1.38.0
+          =stable ]
+ 18  libreoffice              available    \
+        [ =5.0.6.2_15  =5.3.6.1  =stable ]
+ 19  gimp                     available    [ =2.8.22 ]
+ 20  docker=latest            enabled      \
+        [ =17.12.1  =18.03.1  =18.06.1  =18.09.9  =stable ]
+ 21  mate-desktop1.x          available    \
+        [ =1.19.0  =1.20.0  =stable ]
+ 22  GraphicsMagick1.3        available    \
+        [ =1.3.29  =1.3.32  =1.3.34  =stable ]
+ 23  tomcat8.5                available    \
+        [ =8.5.31  =8.5.32  =8.5.38  =8.5.40  =8.5.42  =8.5.50
+          =stable ]
+ 24  epel                     available    [ =7.11  =stable ]
+ 25  testing                  available    [ =1.0  =stable ]
+ 26  ecs                      available    [ =stable ]
+ 27  corretto8                available    \
+        [ =1.8.0_192  =1.8.0_202  =1.8.0_212  =1.8.0_222  =1.8.0_232
+          =1.8.0_242  =stable ]
+ 29  golang1.11               available    \
+        [ =1.11.3  =1.11.11  =1.11.13  =stable ]
+ 30  squid4                   available    [ =4  =stable ]
+ 32  lustre2.10               available    \
+        [ =2.10.5  =2.10.8  =stable ]
+ 33  java-openjdk11           available    [ =11  =stable ]
+ 34  lynis                    available    [ =stable ]
+ 36  BCC                      available    [ =0.x  =stable ]
+ 37  mono                     available    [ =5.x  =stable ]
+ 38  nginx1=latest            enabled      [ =stable ]
+ 40  mock                     available    [ =stable ]
+ 41  postgresql11             available    [ =11  =stable ]
+ 43  livepatch                available    [ =stable ]
+ 44  python3.8                available    [ =stable ]
+ 45  haproxy2                 available    [ =stable ]
+ 46  collectd                 available    [ =stable ]
+ 47  aws-nitro-enclaves-cli   available    [ =stable ]
+ 48  R4                       available    [ =stable ]
+  _  kernel-5.4               available    [ =stable ]
+ 50  selinux-ng               available    [ =stable ]
+ 51  php8.0                   available    [ =stable ]
+ 52  tomcat9                  available    [ =stable ]
+ 53  unbound1.13              available    [ =stable ]
+ 54  mariadb10.5              available    [ =stable ]
+ 55  kernel-5.10=latest       enabled      [ =stable ]
+ 56  redis6                   available    [ =stable ]
+ 57  ruby3.0                  available    [ =stable ]
+ 58  postgresql12             available    [ =stable ]
+ 59  postgresql13             available    [ =stable ]
+ 60  mock2                    available    [ =stable ]
+ 61  dnsmasq2.85              available    [ =stable ]
+ 62  kernel-5.15              available    [ =stable ]
+ 63  postgresql14             available    [ =stable ]
+ 64  firefox                  available    [ =stable ]
+ 65  lustre                   available    [ =stable ]
+ 66  php8.1                   available    [ =stable ]
+ 67  awscli1                  available    [ =stable ]
+ 68  php8.2                   available    [ =stable ]
+ 69  dnsmasq                  available    [ =stable ]
+ 70  unbound1.17              available    [ =stable ]
+ 71  golang1.19               available    [ =stable ]
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo service nginx start
+Redirecting to /bin/systemctl start nginx.service
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo nano /etc/nginx/nginx.conf
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo nginx -t
+nginx: [emerg] invalid number of arguments in "proxy_pass" directive in /etc/nginx/nginx.conf:43
+nginx: configuration file /etc/nginx/nginx.conf test failed
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo systemctl reload nginx
+Job for nginx.service failed because the control process exited with error code. See "systemctl status nginx.service" and "journalctl -xe" for details.
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo nano /etc/nginx/nginx.conf
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo nginx -t
+nginx: [emerg] unexpected "}" in /etc/nginx/nginx.conf:84
+nginx: configuration file /etc/nginx/nginx.conf test failed
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo nano /etc/nginx/nginx.conf
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo nano -c /etc/nginx/nginx.conf
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo systemctl reload nginx
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py --server.port 80
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+Traceback (most recent call last):
+  File "/usr/lib64/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib64/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/__main__.py", line 20, in <module>
+    main(prog_name="streamlit")
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1657, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/cli.py", line 233, in main_run
+    _main_run(target, args, flag_options=kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/cli.py", line 269, in _main_run
+    bootstrap.run(file, command_line, args, flag_options)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/bootstrap.py", line 404, in run
+    asyncio.run(run_server())
+  File "/usr/lib64/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib64/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/bootstrap.py", line 392, in run_server
+    await server.start()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 259, in start
+    start_listening(app)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 130, in start_listening
+    start_listening_tcp_socket(http_server)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 189, in start_listening_tcp_socket
+    http_server.listen(port, address)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tornado/tcpserver.py", line 189, in listen
+    reuse_port=reuse_port,
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+PermissionError: [Errno 13] Permission denied
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 streamlit run 1_🏠_Home.py 
+python3: can't open file 'streamlit': [Errno 2] No such file or directory
+[ec2-user@ip-172-31-2-215 Bio_Project]$ ls
+1_🏠_Home.py  Lino_bio_server.pem  nohup.out  pages  README.md  requirements.txt  style
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py 
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://172.31.2.215:8501
+  External URL: http://13.55.176.25:8501
+
+^C  Stopping...
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo tail -f /var/log/nginx/error.log
+2023/06/06 16:32:38 [error] 13329#13329: *4198 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/health HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/health", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:38 [error] 13329#13329: *4200 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/allowed-message-origins HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/allowed-message-origins", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:38 [error] 13329#13329: *4518 connect() failed (111: Connection refused) while connecting to upstream, client: 107.23.255.2, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:32:38 [error] 13329#13329: *4198 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/health HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/health", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:38 [error] 13329#13329: *4200 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/allowed-message-origins HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/allowed-message-origins", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:39 [error] 13329#13329: *4522 connect() failed (111: Connection refused) while connecting to upstream, client: 54.228.16.2, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:32:39 [error] 13329#13329: *4198 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/health HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/health", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:39 [error] 13329#13329: *4200 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/allowed-message-origins HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/allowed-message-origins", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:40 [error] 13329#13329: *4526 connect() failed (111: Connection refused) while connecting to upstream, client: 54.248.220.34, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:32:40 [error] 13329#13329: *4528 connect() failed (111: Connection refused) while connecting to upstream, client: 54.250.253.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:32:41 [error] 13329#13329: *4531 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/allowed-message-origins HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/allowed-message-origins", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:41 [error] 13329#13329: *4530 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/health HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/health", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:42 [error] 13329#13329: *4534 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/stream HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/stream", host: "www.lino.bio"
+2023/06/06 16:32:42 [error] 13329#13329: *2463 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/health HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/health", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:42 [error] 13329#13329: *2457 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/allowed-message-origins HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/allowed-message-origins", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:42 [error] 13329#13329: *4538 connect() failed (111: Connection refused) while connecting to upstream, client: 54.183.255.130, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:32:42 [error] 13329#13329: *2463 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/allowed-message-origins HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/allowed-message-origins", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:42 [error] 13329#13329: *2457 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/health HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/health", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:43 [error] 13329#13329: *2463 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/health HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/health", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:43 [error] 13329#13329: *2457 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/allowed-message-origins HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/allowed-message-origins", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:44 [error] 13329#13329: *4544 connect() failed (111: Connection refused) while connecting to upstream, client: 177.71.207.162, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:32:45 [error] 13329#13329: *4531 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/allowed-message-origins HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/allowed-message-origins", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:45 [error] 13329#13329: *4530 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/health HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/health", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:45 [error] 13329#13329: *2463 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/allowed-message-origins HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/allowed-message-origins", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:45 [error] 13329#13329: *2457 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/health HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/health", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:48 [error] 13329#13329: *4550 connect() failed (111: Connection refused) while connecting to upstream, client: 176.34.159.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:32:50 [error] 13329#13329: *2463 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/health HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/health", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:50 [error] 13329#13329: *2457 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/allowed-message-origins HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/allowed-message-origins", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:51 [error] 13329#13329: *4554 connect() failed (111: Connection refused) while connecting to upstream, client: 54.251.31.130, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:32:54 [error] 13329#13329: *4531 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/allowed-message-origins HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/allowed-message-origins", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:54 [error] 13329#13329: *4530 connect() failed (111: Connection refused) while connecting to upstream, client: 124.184.233.97, server: _, request: "GET /_stcore/health HTTP/1.1", upstream: "http://127.0.0.1:8501/_stcore/health", host: "www.lino.bio", referrer: "http://www.lino.bio/"
+2023/06/06 16:32:55 [error] 13329#13329: *4558 connect() failed (111: Connection refused) while connecting to upstream, client: 54.245.168.34, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:32:57 [error] 13329#13329: *4560 connect() failed (111: Connection refused) while connecting to upstream, client: 54.255.254.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:32:58 [error] 13329#13329: *4562 connect() failed (111: Connection refused) while connecting to upstream, client: 54.241.32.98, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:00 [error] 13329#13329: *4564 connect() failed (111: Connection refused) while connecting to upstream, client: 54.243.31.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:00 [error] 13329#13329: *4566 connect() failed (111: Connection refused) while connecting to upstream, client: 54.252.254.194, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:04 [error] 13329#13329: *4568 connect() failed (111: Connection refused) while connecting to upstream, client: 54.252.79.162, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:06 [error] 13329#13329: *4570 connect() failed (111: Connection refused) while connecting to upstream, client: 54.232.40.66, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:07 [error] 13329#13329: *4572 connect() failed (111: Connection refused) while connecting to upstream, client: 54.244.52.194, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:08 [error] 13329#13329: *4574 connect() failed (111: Connection refused) while connecting to upstream, client: 107.23.255.2, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:09 [error] 13329#13329: *4576 connect() failed (111: Connection refused) while connecting to upstream, client: 54.228.16.2, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:10 [error] 13329#13329: *4578 connect() failed (111: Connection refused) while connecting to upstream, client: 54.248.220.34, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:10 [error] 13329#13329: *4580 connect() failed (111: Connection refused) while connecting to upstream, client: 54.250.253.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:12 [error] 13329#13329: *4582 connect() failed (111: Connection refused) while connecting to upstream, client: 54.183.255.130, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:15 [error] 13329#13329: *4584 connect() failed (111: Connection refused) while connecting to upstream, client: 177.71.207.162, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:19 [error] 13329#13329: *4586 connect() failed (111: Connection refused) while connecting to upstream, client: 176.34.159.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:21 [error] 13329#13329: *4588 connect() failed (111: Connection refused) while connecting to upstream, client: 54.251.31.130, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:26 [error] 13329#13329: *4590 connect() failed (111: Connection refused) while connecting to upstream, client: 54.245.168.34, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:27 [error] 13329#13329: *4592 connect() failed (111: Connection refused) while connecting to upstream, client: 54.255.254.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:28 [error] 13329#13329: *4594 connect() failed (111: Connection refused) while connecting to upstream, client: 54.241.32.98, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:30 [error] 13329#13329: *4596 connect() failed (111: Connection refused) while connecting to upstream, client: 54.243.31.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:30 [error] 13329#13329: *4598 connect() failed (111: Connection refused) while connecting to upstream, client: 54.252.254.194, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:34 [error] 13329#13329: *4600 connect() failed (111: Connection refused) while connecting to upstream, client: 54.252.79.162, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:37 [error] 13329#13329: *4602 connect() failed (111: Connection refused) while connecting to upstream, client: 54.244.52.194, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:37 [error] 13329#13329: *4604 connect() failed (111: Connection refused) while connecting to upstream, client: 54.232.40.66, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:39 [error] 13329#13329: *4606 connect() failed (111: Connection refused) while connecting to upstream, client: 107.23.255.2, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:40 [error] 13329#13329: *4608 connect() failed (111: Connection refused) while connecting to upstream, client: 54.228.16.2, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:40 [error] 13329#13329: *4610 connect() failed (111: Connection refused) while connecting to upstream, client: 54.248.220.34, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:40 [error] 13329#13329: *4612 connect() failed (111: Connection refused) while connecting to upstream, client: 54.250.253.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:43 [error] 13329#13329: *4614 connect() failed (111: Connection refused) while connecting to upstream, client: 54.183.255.130, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:46 [error] 13329#13329: *4616 connect() failed (111: Connection refused) while connecting to upstream, client: 177.71.207.162, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:49 [error] 13329#13329: *4618 connect() failed (111: Connection refused) while connecting to upstream, client: 176.34.159.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:51 [error] 13329#13329: *4620 connect() failed (111: Connection refused) while connecting to upstream, client: 54.251.31.130, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:56 [error] 13329#13329: *4622 connect() failed (111: Connection refused) while connecting to upstream, client: 54.245.168.34, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:57 [error] 13329#13329: *4624 connect() failed (111: Connection refused) while connecting to upstream, client: 54.255.254.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:33:58 [error] 13329#13329: *4626 connect() failed (111: Connection refused) while connecting to upstream, client: 54.241.32.98, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:34:00 [error] 13329#13329: *4628 connect() failed (111: Connection refused) while connecting to upstream, client: 54.252.254.194, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:34:01 [error] 13329#13329: *4630 connect() failed (111: Connection refused) while connecting to upstream, client: 54.243.31.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:34:04 [error] 13329#13329: *4632 connect() failed (111: Connection refused) while connecting to upstream, client: 54.252.79.162, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:34:07 [error] 13329#13329: *4634 connect() failed (111: Connection refused) while connecting to upstream, client: 54.244.52.194, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:34:08 [error] 13329#13329: *4636 connect() failed (111: Connection refused) while connecting to upstream, client: 54.232.40.66, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:34:09 [error] 13329#13329: *4638 connect() failed (111: Connection refused) while connecting to upstream, client: 107.23.255.2, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:34:10 [error] 13329#13329: *4640 connect() failed (111: Connection refused) while connecting to upstream, client: 54.248.220.34, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:34:10 [error] 13329#13329: *4642 connect() failed (111: Connection refused) while connecting to upstream, client: 54.228.16.2, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:34:11 [error] 13329#13329: *4644 connect() failed (111: Connection refused) while connecting to upstream, client: 54.250.253.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+^C
+[ec2-user@ip-172-31-2-215 Bio_Project]$ curl http://localhost:8501
+curl: (7) Failed to connect to localhost port 8501 after 0 ms: Couldn't connect to server
+[ec2-user@ip-172-31-2-215 Bio_Project]$ netstat -tuln | grep 8501
+[ec2-user@ip-172-31-2-215 Bio_Project]$ netstat -tuln | grep 8501
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py 
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://172.31.2.215:8501
+  External URL: http://13.55.176.25:8501
+
+^C  Stopping...
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo systemctl restart nginx
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
+   Active: active (running) since Tue 2023-06-06 16:48:51 UTC; 38s ago
+  Process: 13328 ExecReload=/usr/sbin/nginx -s reload (code=exited, status=0/SUCCESS)
+  Process: 13521 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+  Process: 13517 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+  Process: 13515 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+ Main PID: 13523 (nginx)
+   CGroup: /system.slice/nginx.service
+           ├─13523 nginx: master process /usr/sbin/nginx
+           └─13524 nginx: worker process
+
+Jun 06 16:48:51 ip-172-31-2-215.ap-southeast-2.compute.internal systemd[1]: Stopped The nginx HTTP and reverse proxy server.
+Jun 06 16:48:51 ip-172-31-2-215.ap-southeast-2.compute.internal systemd[1]: Unit nginx.service entered failed state.
+Jun 06 16:48:51 ip-172-31-2-215.ap-southeast-2.compute.internal systemd[1]: nginx.service failed.
+Jun 06 16:48:51 ip-172-31-2-215.ap-southeast-2.compute.internal systemd[1]: Starting The nginx HTTP and reverse proxy server...
+Jun 06 16:48:51 ip-172-31-2-215.ap-southeast-2.compute.internal nginx[13517]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Jun 06 16:48:51 ip-172-31-2-215.ap-southeast-2.compute.internal nginx[13517]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Jun 06 16:48:51 ip-172-31-2-215.ap-southeast-2.compute.internal systemd[1]: Started The nginx HTTP and reverse proxy server.
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo tail -f /var/log/nginx/error.log
+2023/06/06 16:50:05 [error] 13524#13524: *80 connect() failed (111: Connection refused) while connecting to upstream, client: 54.255.254.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:07 [error] 13524#13524: *82 connect() failed (111: Connection refused) while connecting to upstream, client: 54.252.79.162, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:07 [error] 13524#13524: *84 connect() failed (111: Connection refused) while connecting to upstream, client: 54.245.168.34, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:07 [error] 13524#13524: *86 connect() failed (111: Connection refused) while connecting to upstream, client: 177.71.207.162, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:07 [error] 13524#13524: *88 connect() failed (111: Connection refused) while connecting to upstream, client: 176.34.159.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:09 [error] 13524#13524: *90 connect() failed (111: Connection refused) while connecting to upstream, client: 54.241.32.98, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:15 [error] 13524#13524: *92 connect() failed (111: Connection refused) while connecting to upstream, client: 54.243.31.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:19 [error] 13524#13524: *94 connect() failed (111: Connection refused) while connecting to upstream, client: 54.244.52.194, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:19 [error] 13524#13524: *96 connect() failed (111: Connection refused) while connecting to upstream, client: 54.248.220.34, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:19 [error] 13524#13524: *98 connect() failed (111: Connection refused) while connecting to upstream, client: 54.250.253.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:24 [error] 13524#13524: *100 connect() failed (111: Connection refused) while connecting to upstream, client: 107.23.255.2, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:24 [error] 13524#13524: *102 connect() failed (111: Connection refused) while connecting to upstream, client: 54.183.255.130, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:29 [error] 13524#13524: *104 connect() failed (111: Connection refused) while connecting to upstream, client: 54.228.16.2, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:29 [error] 13524#13524: *106 connect() failed (111: Connection refused) while connecting to upstream, client: 54.251.31.130, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:29 [error] 13524#13524: *108 connect() failed (111: Connection refused) while connecting to upstream, client: 54.232.40.66, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:32 [error] 13524#13524: *110 connect() failed (111: Connection refused) while connecting to upstream, client: 54.252.254.194, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:35 [error] 13524#13524: *112 connect() failed (111: Connection refused) while connecting to upstream, client: 54.255.254.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:37 [error] 13524#13524: *114 connect() failed (111: Connection refused) while connecting to upstream, client: 54.252.79.162, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:37 [error] 13524#13524: *116 connect() failed (111: Connection refused) while connecting to upstream, client: 54.245.168.34, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:38 [error] 13524#13524: *118 connect() failed (111: Connection refused) while connecting to upstream, client: 177.71.207.162, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:38 [error] 13524#13524: *120 connect() failed (111: Connection refused) while connecting to upstream, client: 176.34.159.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:39 [error] 13524#13524: *122 connect() failed (111: Connection refused) while connecting to upstream, client: 54.241.32.98, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:46 [error] 13524#13524: *124 connect() failed (111: Connection refused) while connecting to upstream, client: 54.243.31.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:49 [error] 13524#13524: *126 connect() failed (111: Connection refused) while connecting to upstream, client: 54.244.52.194, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:49 [error] 13524#13524: *128 connect() failed (111: Connection refused) while connecting to upstream, client: 54.248.220.34, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:49 [error] 13524#13524: *130 connect() failed (111: Connection refused) while connecting to upstream, client: 54.250.253.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:54 [error] 13524#13524: *132 connect() failed (111: Connection refused) while connecting to upstream, client: 54.183.255.130, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:54 [error] 13524#13524: *134 connect() failed (111: Connection refused) while connecting to upstream, client: 107.23.255.2, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:59 [error] 13524#13524: *136 connect() failed (111: Connection refused) while connecting to upstream, client: 54.251.31.130, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:50:59 [error] 13524#13524: *138 connect() failed (111: Connection refused) while connecting to upstream, client: 54.228.16.2, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:51:00 [error] 13524#13524: *140 connect() failed (111: Connection refused) while connecting to upstream, client: 54.232.40.66, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:51:02 [error] 13524#13524: *142 connect() failed (111: Connection refused) while connecting to upstream, client: 54.252.254.194, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:51:06 [error] 13524#13524: *144 connect() failed (111: Connection refused) while connecting to upstream, client: 54.255.254.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:51:07 [error] 13524#13524: *146 connect() failed (111: Connection refused) while connecting to upstream, client: 54.252.79.162, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:51:08 [error] 13524#13524: *148 connect() failed (111: Connection refused) while connecting to upstream, client: 54.245.168.34, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:51:08 [error] 13524#13524: *150 connect() failed (111: Connection refused) while connecting to upstream, client: 176.34.159.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:51:09 [error] 13524#13524: *152 connect() failed (111: Connection refused) while connecting to upstream, client: 177.71.207.162, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:51:10 [error] 13524#13524: *154 connect() failed (111: Connection refused) while connecting to upstream, client: 54.241.32.98, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:51:16 [error] 13524#13524: *156 connect() failed (111: Connection refused) while connecting to upstream, client: 54.243.31.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+^X2023/06/06 16:51:19 [error] 13524#13524: *158 connect() failed (111: Connection refused) while connecting to upstream, client: 54.244.52.194, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:51:20 [error] 13524#13524: *160 connect() failed (111: Connection refused) while connecting to upstream, client: 54.248.220.34, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+2023/06/06 16:51:20 [error] 13524#13524: *162 connect() failed (111: Connection refused) while connecting to upstream, client: 54.250.253.226, server: _, request: "GET /index.html HTTP/1.1", upstream: "http://127.0.0.1:8501/index.html", host: "13.55.176.25"
+^C
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py
+
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://172.31.2.215:8501
+  External URL: http://13.55.176.25:8501
+
+^C  Stopping...
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo systemctl restart nginx
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
+   Active: active (running) since Tue 2023-06-06 16:52:46 UTC; 31s ago
+  Process: 13328 ExecReload=/usr/sbin/nginx -s reload (code=exited, status=0/SUCCESS)
+  Process: 13566 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+  Process: 13562 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+  Process: 13560 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+ Main PID: 13568 (nginx)
+   CGroup: /system.slice/nginx.service
+           ├─13568 nginx: master process /usr/sbin/nginx
+           └─13569 nginx: worker process
+
+Jun 06 16:52:46 ip-172-31-2-215.ap-southeast-2.compute.internal systemd[1]: Stopped The nginx HTTP and reverse proxy server.
+Jun 06 16:52:46 ip-172-31-2-215.ap-southeast-2.compute.internal systemd[1]: Starting The nginx HTTP and reverse proxy server...
+Jun 06 16:52:46 ip-172-31-2-215.ap-southeast-2.compute.internal nginx[13562]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Jun 06 16:52:46 ip-172-31-2-215.ap-southeast-2.compute.internal nginx[13562]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Jun 06 16:52:46 ip-172-31-2-215.ap-southeast-2.compute.internal systemd[1]: Started The nginx HTTP and reverse proxy server.
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo nano /etc/nginx/nginx.conf
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://172.31.2.215:8501
+  External URL: http://13.55.176.25:8501
+
+^C  Stopping...
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py --server.port 80
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+Traceback (most recent call last):
+  File "/usr/lib64/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib64/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/__main__.py", line 20, in <module>
+    main(prog_name="streamlit")
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1657, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/cli.py", line 233, in main_run
+    _main_run(target, args, flag_options=kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/cli.py", line 269, in _main_run
+    bootstrap.run(file, command_line, args, flag_options)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/bootstrap.py", line 404, in run
+    asyncio.run(run_server())
+  File "/usr/lib64/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib64/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/bootstrap.py", line 392, in run_server
+    await server.start()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 259, in start
+    start_listening(app)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 130, in start_listening
+    start_listening_tcp_socket(http_server)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 189, in start_listening_tcp_socket
+    http_server.listen(port, address)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tornado/tcpserver.py", line 189, in listen
+    reuse_port=reuse_port,
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+PermissionError: [Errno 13] Permission denied
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo systemctl start nginx
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo yum install nginx -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                                                         | 3.7 kB  00:00:00     
+Package 1:nginx-1.22.1-1.amzn2.0.2.x86_64 already installed and latest version
+Nothing to do
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo systemctl enable nginx
+Created symlink from /etc/systemd/system/multi-user.target.wants/nginx.service to /usr/lib/systemd/system/nginx.service.
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo nano /etc/nginx/nginx.conf
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py --server.port 80
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+Traceback (most recent call last):
+  File "/usr/lib64/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib64/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/__main__.py", line 20, in <module>
+    main(prog_name="streamlit")
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1657, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/cli.py", line 233, in main_run
+    _main_run(target, args, flag_options=kwargs)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/cli.py", line 269, in _main_run
+    bootstrap.run(file, command_line, args, flag_options)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/bootstrap.py", line 404, in run
+    asyncio.run(run_server())
+  File "/usr/lib64/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib64/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/bootstrap.py", line 392, in run_server
+    await server.start()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 259, in start
+    start_listening(app)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 130, in start_listening
+    start_listening_tcp_socket(http_server)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/streamlit/web/server/server.py", line 189, in start_listening_tcp_socket
+    http_server.listen(port, address)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tornado/tcpserver.py", line 189, in listen
+    reuse_port=reuse_port,
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+PermissionError: [Errno 13] Permission denied
+[ec2-user@ip-172-31-2-215 Bio_Project]$ ython3 -m streamlit run 1_🏠_Home.py
+-bash: ython3: command not found
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://172.31.2.215:8501
+  External URL: http://13.55.176.25:8501
+
+
+  A new version of Streamlit is available.
+
+  See what's new at https://discuss.streamlit.io/c/announcements
+
+  Enter the following command to upgrade:
+  $ pip install streamlit --upgrade
+
+^C  Stopping...
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo systemctl restart nginx
+[ec2-user@ip-172-31-2-215 Bio_Project]$ 
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py
+
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://172.31.2.215:8501
+  External URL: http://13.55.176.25:8501
+
+^C  Stopping...
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; vendor preset: disabled)
+   Active: active (running) since Wed 2023-06-07 14:54:49 UTC; 5min ago
+  Process: 19518 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+  Process: 19514 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+  Process: 19511 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+ Main PID: 19520 (nginx)
+   CGroup: /system.slice/nginx.service
+           ├─19520 nginx: master process /usr/sbin/nginx
+           └─19521 nginx: worker process
+
+Jun 07 14:54:49 ip-172-31-2-215.ap-southeast-2.compute.internal systemd[1]: Stopped The nginx HTTP and reverse proxy server.
+Jun 07 14:54:49 ip-172-31-2-215.ap-southeast-2.compute.internal systemd[1]: Starting The nginx HTTP and reverse proxy server...
+Jun 07 14:54:49 ip-172-31-2-215.ap-southeast-2.compute.internal nginx[19514]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Jun 07 14:54:49 ip-172-31-2-215.ap-southeast-2.compute.internal nginx[19514]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Jun 07 14:54:49 ip-172-31-2-215.ap-southeast-2.compute.internal systemd[1]: Started The nginx HTTP and reverse proxy server.
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://172.31.2.215:8501
+  External URL: http://13.55.176.25:8501
+
+^C  Stopping...
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo nano /etc/nginx/nginx.conf
+[ec2-user@ip-172-31-2-215 Bio_Project]$ sudo systemctl restart nginx
+[ec2-user@ip-172-31-2-215 Bio_Project]$ python3 -m streamlit run 1_🏠_Home.py
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://172.31.2.215:8501
+  External URL: http://13.55.176.25:8501
+
+^C  Stopping...
+[ec2-user@ip-172-31-2-215 Bio_Project]$ nohup python3 -m streamlit run 1_🏠_Home.py &
+[1] 20179
+[ec2-user@ip-172-31-2-215 Bio_Project]$ nohup: ignoring input and appending output to ‘nohup.out’
+

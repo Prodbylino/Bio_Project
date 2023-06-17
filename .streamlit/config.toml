@@ -4,10 +4,10 @@
 primaryColor = '#E694FF'
 
 # Background color for the main content area
-backgroundColor = '#00172B'
+backgroundColor = '#051c2c'
 
 # Background color for sidebar and most interactive widgets
-secondaryBackgroundColor = '#0083B8'
+secondaryBackgroundColor = '#040c1a'
 
 # Color used for almost all text
 textColor = '#FFFFFF'
@@ -16,3 +16,15 @@ textColor = '#FFFFFF'
 # Accepted values (serif | sans serif | monospace)
 # Default: "sans serif"
 font = "sans serif"
+
+
+# @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap"');
+
+
+# * {font-family: 'Nunito Sans';
+#     }
+
+
+# MainMenu {visibility: hidden;}
+# footer {visibility: hidden;}
+# header {visibility: hidden;}

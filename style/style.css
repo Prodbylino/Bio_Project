@@ -13,7 +13,7 @@ input[type=message], input[type=email], input[type=text], textarea {
 
 /* Style the submit button with a specific background color etc */
 button[type=submit] {
-  background-color: #409ff1;
+  background-color: #928e11;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -23,13 +23,15 @@ button[type=submit] {
 
 /* When moving the mouse over the submit button, add a darker green color */
 button[type=submit]:hover {
-  background-color: #1b32c4;
+  background-color: #010203;
 }
 
 
 /* Hide Streamlit Branding */
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
-header {visibility: hidden;}
+header {visibility: hidden;} 
+
+
 
 
